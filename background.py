@@ -60,7 +60,7 @@ def summarize_text(text):
     return response.choices[0].message['content']
 
 def analyze_match(resume, job_details):
-    prompt = f"Resume:\n{resume}\n\nJob Details:\n{job_details}\n\nIn less tha 150 words, Is the resume : {resume} and the job details:{job_details} relevant. If and only relevant, give suggestions on missing skills and improvements. If irrelevant, let me know that this job posting is irrelevant"
+    prompt = f"In less tha 150 words, Is the resume : {resume} and the job details:{job_details} relevant. If and only relevant, give suggestions on missing skills and improvements. If irrelevant, let me know that this job posting is irrelevant"
     response = openai.ChatCompletion.create(
         model= chosen_model,
         messages=[
@@ -76,8 +76,8 @@ Kailash Subramaniyam \n
 kylasben@gmail.com \n
 [date]
 
-Job Poster or Hiring manager name (If Job poster or hiring manager not available, just the company name) \n
-Company name
+Job Poster or Hiring manager name (If Job poster or hiring manager not available in job_details, just the company name from job_details) \n
+Company name (search for the company name in the job_details)
 
 Dear Hiring Manager,
 Express why I want to work for this company and this role and how my experience is of relevance to this role
@@ -86,8 +86,8 @@ Sincerely,
 Kailash Kumar
 """
 
-def create_cv(resume, suggestions):
-    prompt = f"Resume:\n{resume}\n\nSuggestions:\n{suggestions}\n\nIn less than 200 words, Generate a cover letter based on the resume and the job details. Use the user information from resume to fill in the cover letter, use the format {cl_format}:"
+def create_cv(resume, job_details):
+    prompt = f"In less than 200 words, Generate a cover letter based on the resume: {resume} and the job details: {job_details}. Create a cover letter in this format: {cl_format}:"
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
