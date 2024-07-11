@@ -135,35 +135,34 @@ if uploaded_resume is not None:
                                                         value=st.session_state.job_details, 
                                                         height=200)
     
-    #Step 3: Analyze Match Potential  
-    if st.button("Suggestions"):
-        if st.session_state.resume_text and st.session_state.job_details:
-            analysis = analyze_match(st.session_state.resume_text, st.session_state.job_details)
-            st.write(analysis)
-            show_gif_overlay('images/stars2.gif', duration=2)
-        else:
-            st.write(f"Please add the resume and job details to continue further")
-        
-    if st.button("Create Cover Letter"):
-        if st.session_state.resume_text and st.session_state.job_details:
-            new_cv = create_cv(st.session_state.resume_text, st.session_state.job_details)
-            st.subheader("Generated CV")
-            st.write(new_cv)
-            # Create DOCX file
-            docx_file = create_docx(new_cv)
-            show_gif_overlay('images/stars2.gif', duration=2)
+#Step 3: Analyze Match Potential  
+if st.button("Suggestions"):
+   if st.session_state.resume_text and st.session_state.job_details:
+       analysis = analyze_match(st.session_state.resume_text, st.session_state.job_details)
+       st.write(analysis)
+       show_gif_overlay('images/stars2.gif', duration=2)
+   else:
+       st.write(f"Please add the resume and job details to continue further")
+   
+if st.button("Create Cover Letter"):
+   if st.session_state.resume_text and st.session_state.job_details:
+       new_cv = create_cv(st.session_state.resume_text, st.session_state.job_details)
+       st.subheader("Generated CV")
+       st.write(new_cv)
+       # Create DOCX file
+       docx_file = create_docx(new_cv)
+       show_gif_overlay('images/stars2.gif', duration=2)
 
-            col1, col2, col3 = st.columns([1,1,1])
-            with col2:
-                st.download_button(
-                    label="Download Cover Letter",
-                    data=docx_file,
-                    file_name="cover_letter.docx",
-                    mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-                )
-            
-        else:
-            st.write(f"Please add the resume and job details to continue further")
+       col1, col2, col3 = st.columns([1,1,1])
+       with col2:
+           st.download_button(
+               label="Download Cover Letter",
+               data=docx_file,
+               file_name="cover_letter.docx",
+               mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+           )  
+   else:
+       st.write(f"Please add the resume and job details to continue further")
 
     
                 
