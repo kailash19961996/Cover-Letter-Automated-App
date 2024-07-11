@@ -1,4 +1,4 @@
-# Automated Cover Letter Generator
+# Automated Cover Letter Generator App
 
 Welcome to the Automated Cover Letter Generator! This application leverages AI to create personalized cover letters, streamlining your job application process. The app is deployed on Streamlit for ease of use.
 
