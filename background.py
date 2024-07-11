@@ -11,7 +11,7 @@ from docx import Document
 from bs4 import BeautifulSoup
 
 models = ["gpt-3.5-turbo", "gpt-4o"]
-chosen_model = models[1]
+chosen_model = models[0]
 
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as image_file:
