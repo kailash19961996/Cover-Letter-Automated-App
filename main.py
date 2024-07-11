@@ -106,34 +106,31 @@ if uploaded_resume is not None:
         resume_text = extract_text_from_docx(uploaded_resume)
     st.session_state.resume_text = resume_text
 
-    # if resume_text:
-    #     st.text_area("Uploaded Resume", resume_text, height=200)
+# Step 2: Enter Job Details
+st.header("Step 2: Enter Job Details")
+is_gated = st.radio("Is the job posted site gated?", ("Yes (like Linkedin or Indeed)", "No (Anyone can access the site without logging in)"))
 
-    # Step 2: Enter Job Details
-    st.header("Step 2: Enter Job Details")
-    is_gated = st.radio("Is the job posted site gated?", ("Yes (like Linkedin or Indeed)", "No (Anyone can access the site without logging in)"))
+if is_gated == "Yes (like Linkedin or Indeed)":
+   # st.info("Please copy and paste the job details in the text box below.")
+   st.session_state.job_details = st.text_area("Paste the job details here:")
+else:
+   job_url = st.text_input("Enter the URL of the job posting:")
+   if st.button("Scrape Job Details"):
+       if job_url:
+           soup = scrape_website(job_url)
+           if soup:
+               job_details = ' '.join(p.get_text() for p in soup.find_all('p'))
+               if job_details:
+                   st.session_state.job_details = job_details
+               else:
+                   st.error("No text content found to summarize.")
+           else:
+               st.error("Failed to retrieve the data from the specified URL.")
 
-    if is_gated == "Yes (like Linkedin or Indeed)":
-        # st.info("Please copy and paste the job details in the text box below.")
-        st.session_state.job_details = st.text_area("Paste the job details here:")
-    else:
-        job_url = st.text_input("Enter the URL of the job posting:")
-        if st.button("Scrape Job Details"):
-            if job_url:
-                soup = scrape_website(job_url)
-                if soup:
-                    job_details = ' '.join(p.get_text() for p in soup.find_all('p'))
-                    if job_details:
-                        st.session_state.job_details = job_details
-                    else:
-                        st.error("No text content found to summarize.")
-                else:
-                    st.error("Failed to retrieve the data from the specified URL.")
-
-        if 'job_details' in st.session_state and st.session_state.job_details:
-            st.session_state.job_details = st.text_area("Job Details (Enter the missing information, if any)", 
-                                                        value=st.session_state.job_details, 
-                                                        height=200)
+   if 'job_details' in st.session_state and st.session_state.job_details:
+       st.session_state.job_details = st.text_area("Job Details (Enter the missing information, if any)", 
+                                                   value=st.session_state.job_details, 
+                                                   height=200)
     
 #Step 3: Analyze Match Potential  
 if st.button("Suggestions"):
