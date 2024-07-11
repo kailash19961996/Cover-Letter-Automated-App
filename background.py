@@ -87,7 +87,7 @@ Kailash Kumar
 """
 
 def create_cv(resume, job_details):
-    prompt = f"In less than 200 words, Generate a cover letter based on the resume: {resume} and the job details: {job_details}. Create a cover letter in this format: {cl_format}:"
+    prompt = f"In less than 200 words, Generate a cover letter based on the resume: {resume} and the job details: {job_details} in this format: {cl_format}:"
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
