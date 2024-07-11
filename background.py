@@ -60,7 +60,7 @@ def summarize_text(text):
     return response.choices[0].message['content']
 
 def analyze_match(resume, job_details):
-    prompt = f"In less tha 150 words, Is the resume : {resume} and the job details:{job_details} relevant. If and only relevant, give suggestions on missing skills and improvements. If irrelevant, let me know that this job posting is irrelevant"
+    prompt = f"Tell me in less than 150 words, Is the resume:{resume} and the job details:{job_details} relevant?. If and only relevant, give suggestions on missing skills and improvements. If irrelevant, let me know that this job posting is irrelevant"
     response = openai.ChatCompletion.create(
         model= chosen_model,
         messages=[
