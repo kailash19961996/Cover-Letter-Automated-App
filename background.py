@@ -87,7 +87,7 @@ def create_cv(resume, job_details):
     return response.choices[0].message['content']
 
 def add_adjustment(resume, job_details, new_cv, adjustments):
-    prompt = f"In less than 150 words, Modify this cv: {new_cv}, with this adjustments: {adjustments}. Have a look at the resume: {resume} and job details: {job_details} for your reference."
+    prompt = f"In less than 200 words, Modify this cover letter: \"{new_cv}\", with this adjustments: \"{adjustments}\". Have a look at the resume: {resume} and job details: {job_details} for your reference."
     response = openai.ChatCompletion.create(
         model= "gpt-3.5-turbo",
         messages=[
