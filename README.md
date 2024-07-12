@@ -17,6 +17,7 @@ Welcome to the Automated Cover Letter Generator! This application leverages AI t
 You can try out the Automated Cover Letter Generator directly on Streamlit Cloud. No installation or code download is required. Simply follow the link below to start generating your cover letters:
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://cover-letter-app.streamlit.app/)
+[Click here to try the app](https://cover-letter-app.streamlit.app/)
 
 ## Usage
 
