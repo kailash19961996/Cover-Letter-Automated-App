@@ -104,6 +104,12 @@ if 'analysis' not in st.session_state:
     st.session_state.analysis = ""
 if 'job_scrape_error' not in st.session_state:
     st.session_state.job_scrape_error = False
+if 'cover_letter_generated' not in st.session_state:
+    st.session_state.cover_letter_generated = False
+if 'happy_clicked' not in st.session_state:
+    st.session_state.happy_clicked = False
+if 'not_happy_clicked' not in st.session_state:
+    st.session_state.not_happy_clicked = False
 
 # Step 1: Upload Resume
 st.header("Step 1: Upload Your Resume")
@@ -144,30 +150,28 @@ else:
                                                     height=200)
 
 # Step 3: Analyze Match Potential  
-if st.button("Suggestions"):
-    if st.session_state.resume_text and st.session_state.job_details:
-        analysis = analyze_match(st.session_state.resume_text, st.session_state.job_details)
-        st.session_state.analysis = analysis
-        st.write(st.session_state.analysis)
-        show_gif_overlay('images/stars2.gif', duration=2)
-    else:
-        st.write(f"Please add the resume and job details to continue further")
+with st.form(key='suggestions_form'):
+    suggestions_button = st.form_submit_button("Suggestions")
+    if suggestions_button:
+        if st.session_state.resume_text and st.session_state.job_details:
+            st.session_state.analysis = analyze_match(st.session_state.resume_text, st.session_state.job_details)
+            show_gif_overlay('images/stars2.gif', duration=2)
+        else:
+            st.write("Please add the resume and job details to continue further")
 
-# Initialize session state variables
-if 'cover_letter_generated' not in st.session_state:
-    st.session_state.cover_letter_generated = False
-if 'happy_clicked' not in st.session_state:
-    st.session_state.happy_clicked = False
-if 'not_happy_clicked' not in st.session_state:
-    st.session_state.not_happy_clicked = False
+# Display analysis outside the form
+if st.session_state.analysis:
+    st.write(st.session_state.analysis)
 
 # Step 4: Create Cover Letter
-if st.button("Create Cover Letter"):
-    if st.session_state.resume_text and st.session_state.job_details:
-        st.session_state.new_cv = create_cv(st.session_state.resume_text, st.session_state.job_details)
-        st.session_state.cover_letter_generated = True
-    else:
-        st.write("Please add the resume and job details to continue further")
+with st.form(key='create_cv_form'):
+    create_cv_button = st.form_submit_button("Create Cover Letter")
+    if create_cv_button:
+        if st.session_state.resume_text and st.session_state.job_details:
+            st.session_state.new_cv = create_cv(st.session_state.resume_text, st.session_state.job_details)
+            st.session_state.cover_letter_generated = True
+        else:
+            st.write("Please add the resume and job details to continue further")
 
 # Display generated cover letter and options
 if st.session_state.cover_letter_generated:
@@ -202,11 +206,14 @@ if st.session_state.cover_letter_generated:
         if st.button("Apply Adjustments"):
             st.session_state.adjustment_CV = add_adjustment(st.session_state.resume_text, st.session_state.job_details, st.session_state.new_cv, st.session_state.adjustment_text)
             st.write(st.session_state.adjustment_CV)
+            
+        # Always show the download button for the adjusted CV
+        if st.session_state.adjustment_CV:
             docx_file = create_docx(st.session_state.adjustment_CV)
             col1, col2, col3 = st.columns([1,1,1])
             with col2:
                 st.download_button(
-                    label="Download Cover Letter",
+                    label="Download Final Cover Letter",
                     data=docx_file,
                     file_name="cover_letter.docx",
                     mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document")
