@@ -70,7 +70,20 @@ st.markdown("""
         color: white !important;
         border: 1px solid white !important;
     }
-            
+
+    /* Style for download button */
+    .stDownloadButton > button {
+        background-color: black !important;
+        color: white !important;
+        border: 1px solid white !important;
+    }
+    
+    /* Hover effect for download button */
+    .stDownloadButton > button:hover {
+        background-color: #333 !important;
+        color: white !important;
+        border: 1px solid white !important;
+    }
     </style>
     """, unsafe_allow_html=True)
 
