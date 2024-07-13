@@ -11,7 +11,7 @@ add_bg_from_local('images/bg.jpg')
 
 st.markdown("""
 <div style='text-align: center;'>
-     <h1> Cover Letter Creator </h1>
+     <h1> CoverLetterPro AI </h1>
 </div>
 """, unsafe_allow_html=True)
 
