@@ -48,7 +48,7 @@ def show_gif_overlay(gif_path, duration):
     overlay_placeholder.empty()
 
 def analyze_match(resume, job_details):
-    prompt = f"Tell me in less than 150 words, Is the resume:{resume} and the job details:{job_details} relevant?. If and only relevant, give suggestions on missing skills and improvements. If irrelevant, let me know that this job posting is irrelevant"
+    prompt = f"Tell me in less than 150 words, Is the resume: \"{resume}\" and the job details: \"{job_details}\" relevant?. If and only relevant, give suggestions on missing skills and improvements. If irrelevant, let me know that this job posting is irrelevant"
     response = openai.ChatCompletion.create(
         model = chosen_model,
         messages=[
@@ -75,7 +75,7 @@ Kailash Kumar
 """
 
 def create_cv(resume, job_details):
-    prompt = f"In less than 200 words, Generate a cover letter based on the resume: {resume} and the job details: {job_details} in this format: {cl_format}:"
+    prompt = f"In less than 200 words, Generate a cover letter based on the resume: \"{resume}\" and the job details: \"{job_details}\" in this format: \"{cl_format}\":"
     response = openai.ChatCompletion.create(
         model = chosen_model,
         messages=[
@@ -87,7 +87,7 @@ def create_cv(resume, job_details):
     return response.choices[0].message['content']
 
 def add_adjustment(resume, job_details, new_cv, adjustments):
-    prompt = f"In less than 150 words, Modify this cover letter: \"{new_cv}\", with only this adjustments: \"{adjustments}\". Have a look at the resume: {resume} and job details: {job_details} for your reference."
+    prompt = f"In less than 200 words, Modify this cover letter: \"{new_cv}\", with only this adjustments: \"{adjustments}\". Have a look at the resume: \"{resume}\" and job details: \"{job_details}\" for your reference."
     response = openai.ChatCompletion.create(
         model= "gpt-3.5-turbo",
         messages=[
