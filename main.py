@@ -175,7 +175,7 @@ with st.form(key='create_cv_form'):
 
 # Display generated cover letter and options
 if st.session_state.cover_letter_generated:
-    st.subheader("Generated CV")
+    st.subheader("Generated Cover Letter")
     st.write(st.session_state.new_cv)
     
     coll1, coll2 = st.columns([1,1])
@@ -204,6 +204,7 @@ if st.session_state.cover_letter_generated:
     if st.session_state.not_happy_clicked:
         st.session_state.adjustment_text = st.text_area("Let me know what you want to change:", value=st.session_state.adjustment_text)
         if st.button("Apply Adjustments"):
+            st.subheader("Adjusted Cover Letter")
             st.session_state.adjustment_CV = add_adjustment(st.session_state.resume_text, st.session_state.job_details, st.session_state.new_cv, st.session_state.adjustment_text)
             st.write(st.session_state.adjustment_CV)
             
