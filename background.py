@@ -89,7 +89,7 @@ def create_cv(resume, job_details):
 def add_adjustment(resume, job_details, new_cv, adjustments):
     prompt = f"In 200 words maximum, Modify this cover letter: \"{new_cv}\", with only this adjustments: \"{adjustments}\", wherever applicable. Have a look at the resume: \"{resume}\" and job details: \"{job_details}\" for your reference."
     response = openai.ChatCompletion.create(
-        model= "gpt-3.5-turbo",
+        model= "gpt-4o",
         messages=[
             {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": prompt}
