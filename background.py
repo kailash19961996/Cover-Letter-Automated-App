@@ -55,7 +55,7 @@ def analyze_match(resume, job_details):
             {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": prompt}
         ],
-        max_tokens=200
+        max_tokens=300
     )
     return response.choices[0].message['content']
 
@@ -82,7 +82,7 @@ def create_cv(resume, job_details):
             {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": prompt}
         ],
-        max_tokens=300
+        max_tokens=400
     )
     return response.choices[0].message['content']
 
@@ -94,7 +94,7 @@ def add_adjustment(resume, job_details, new_cv, adjustments):
             {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": prompt}
         ],
-        max_tokens=200
+        max_tokens=400
     )
     return response.choices[0].message['content']
 
