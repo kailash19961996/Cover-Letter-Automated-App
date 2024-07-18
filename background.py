@@ -12,31 +12,19 @@ from bs4 import BeautifulSoup
 models = ["gpt-3.5-turbo", "gpt-4o"]
 chosen_model = models[0]
 
-def add_bg_from_local(image_file, opacity=0.9):
+def add_bg_from_local(image_file):
     with open(image_file, "rb") as image_file:
-        encoded_string = base64.b64encode(image_file.read()).decode()
-    
+        encoded_string = base64.b64encode(image_file.read())
     st.markdown(
-        f"""
-        <style>
-        .stApp {{
-            background: url(data:image/{"jpg"};base64,{encoded_string}) no-repeat center center fixed;
-            background-size: cover;
-            position: relative;
-        }}
-        .stApp::before {{
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background: rgba(255, 255, 255, {opacity});
-            z-index: -1;
-        }}
-        </style>
-        """,
-        unsafe_allow_html=True
+    f"""
+    <style>
+    .stApp {{
+        background-image: url(data:image/{"jpg"};base64,{encoded_string.decode()});
+        background-size: cover
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
     )
 
 def show_gif_overlay(gif_path, duration):
