@@ -231,3 +231,5 @@ if st.session_state.cover_letter_generated:
                     data=docx_file,
                     file_name="cover_letter.docx",
                     mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+
+st.sidebar.caption("Built by [Kai](https://kailashsubramaniyam.com/). Like this? [Hire me!](https://kailashsubramaniyam.com/contact)")
