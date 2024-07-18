@@ -48,7 +48,7 @@ def show_gif_overlay(gif_path, duration):
     overlay_placeholder.empty()
 
 def analyze_match(resume, job_details):
-    prompt = f"Tell me in less than 150 words, Is the resume: \"{resume}\" and the job details: \"{job_details}\" relevant?. If and only relevant, give suggestions on missing skills and improvements. If irrelevant, let me know that this job posting is irrelevant"
+    prompt = f"Tell me in less than 150 words, Is the resume: \"{resume}\" and the job details: \"{job_details}\" relevant?. What job requirements, that the resume satisfy, and what does not? If and only relevant, give suggestions on missing skills and improvements. If irrelevant, let me know that this job posting is irrelevant"
     response = openai.ChatCompletion.create(
         model = chosen_model,
         messages=[
