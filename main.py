@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 import requests
 from background import add_bg_from_local, show_gif_overlay, analyze_match, add_adjustment, create_cv, extract_text_from_pdf, extract_text_from_docx, scrape_website, create_docx
 
-add_bg_from_local('images/bg2.jpg')
+add_bg_from_local('images/bg3.jpg')
 
 st.markdown("""
 <div style='text-align: center;'>
