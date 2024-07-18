@@ -232,4 +232,8 @@ if st.session_state.cover_letter_generated:
                     file_name="cover_letter.docx",
                     mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document")
 
-st.sidebar.caption("Built by [Kai](https://kailashsubramaniyam.com/). Like this? [Hire me!](https://kailashsubramaniyam.com/contact)")
+st.markdown("""
+<div style='text-align: center;'>
+    Built by <a href="https://kailashsubramaniyam.com/">Kai</a>. Like this? <a href="https://kailashsubramaniyam.com/contact">Hire me!</a>
+</div>
+""", unsafe_allow_html=True)
