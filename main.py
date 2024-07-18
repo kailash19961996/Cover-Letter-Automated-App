@@ -15,6 +15,16 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
+@st.experimental_dialog("How to use this APP", width=1920)
+def show_video():
+    video_url = "https://www.youtube.com/watch?v=hliDj_jvUJA&t=50s&ab_channel=KailashSubramaniyam"
+    st.video(video_url, loop=False, autoplay=True, muted=False)
+
+c1,c2,c3 = st.columns(3)
+with c2:
+    if st.button('How to use this APP'):
+        show_video()
+         
 # Custom CSS to force white text color
 st.markdown("""
     <style>
