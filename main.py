@@ -193,11 +193,11 @@ if st.session_state.cover_letter_generated:
     
     coll1, coll2 = st.columns([1,1])
     with coll1:
-        if st.button("Happy"):
+        if st.button("Happy 👍🏻"):
             st.session_state.happy_clicked = True
             st.session_state.not_happy_clicked = False
     with coll2:
-        if st.button("Not happy"):
+        if st.button("Not happy 👎🏻"):
             st.session_state.not_happy_clicked = True
             st.session_state.happy_clicked = False
 
