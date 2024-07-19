@@ -60,11 +60,11 @@ def analyze_match(resume, job_details):
     return response.choices[0].message['content']
 
 cl_format = """
-Name of the person (get this information from the resume)
+Name of the person, (get this information from the resume)
 Email (get this information from the resume)
 [date]
 
-Job Poster (or) Hiring manager name (If Job poster or hiring manager information not available in job details, just use the company name from job details) \n
+Job Poster (or) Hiring manager name, (If Job poster or hiring manager information not available in job details, just use the company name from job details) \n
 Company name (search for the company name in the job_details)
 
 Dear Hiring Manager,
@@ -87,7 +87,7 @@ def create_cv(resume, job_details):
     return response.choices[0].message['content']
 
 def add_adjustment(resume, job_details, new_cv, adjustments):
-    prompt = f"In less than 200 words, Modify this cover letter: \"{new_cv}\", with only this adjustments: \"{adjustments}\", wherever applicable. Have a look at the resume: \"{resume}\" and job details: \"{job_details}\" for your reference."
+    prompt = f"In less than 200 words, Modify this cover letter: \"{new_cv}\", with only these adjustments: \"{adjustments}\", wherever applicable. Have a look at the resume: \"{resume}\" and job details: \"{job_details}\" for your reference."
     response = openai.ChatCompletion.create(
         model= "gpt-4o",
         messages=[
