@@ -60,18 +60,18 @@ def analyze_match(resume, job_details):
     return response.choices[0].message['content']
 
 cl_format = """
-Kailash Subramaniyam \n
-kylasben@gmail.com \n
+Name of the person (get this information from the resume)
+Email (get this information from the resume)
 [date]
 
-Job Poster or Hiring manager name (If Job poster or hiring manager not available in job_details, just the company name from job_details) \n
+Job Poster (or) Hiring manager name (If Job poster or hiring manager information not available in job details, just use the company name from job details) \n
 Company name (search for the company name in the job_details)
 
 Dear Hiring Manager,
-Express why I want to work for this company and this role and how my experience is of relevance to this role
+(Express why I want to work for this company and this role and how my experience is of relevance to this role.)
 
 Sincerely,
-Kailash Kumar
+Name of the person (get this information from the resume)
 """
 
 def create_cv(resume, job_details):
