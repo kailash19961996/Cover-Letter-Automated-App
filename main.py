@@ -1,3 +1,17 @@
+"""
+🚀 CoverLetterPro AI 🚀 
+
+My new AI-powered app. An app designed to make creating cover letters a breeze! 🌟
+
+With just a few simple steps, you can generate a personalized cover letter tailored to your job application:
+
+1️⃣ Upload your resume (PDF or DOCX)
+2️⃣ Provide job details (via URL or copy-paste)
+
+Our app will generate suggestions, and if you're happy with them, you can instantly download your cover letter 
+in DOCX format for easy editing and final touches.
+"""
+
 import streamlit as st
 from io import BytesIO
 from docx import Document
