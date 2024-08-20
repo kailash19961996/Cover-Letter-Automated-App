@@ -47,6 +47,7 @@ with coll2:
             <a href = 'mailto:kailash.balasubramaniyam@gmail.com''><img src='{email}' style='width: 31px; height: 31px; margin-right: 25px;'></a>
         </div>""", unsafe_allow_html=True,)
 
+"""
 st.markdown("""
 <div style='text-align: center;'>
      <h4>60-Second Intro</h4>
@@ -87,6 +88,7 @@ st.markdown(f"""
         </div>
     </div>
 """, unsafe_allow_html=True)
+"""
 
 # Custom CSS to force white text color
 st.markdown("""
