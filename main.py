@@ -29,6 +29,24 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
+linkedin = "https://raw.githubusercontent.com/kailash19961996/icons-and-images/main/linkedin.gif"
+github =   "https://raw.githubusercontent.com/kailash19961996/icons-and-images/main/gitcolor.gif"
+Youtube =  "https://raw.githubusercontent.com/kailash19961996/icons-and-images/main/371907120_YOUTUBE_ICON_TRANSPARENT_1080.gif"
+email =    "https://raw.githubusercontent.com/kailash19961996/icons-and-images/main/emails33.gif"
+website =  "https://raw.githubusercontent.com/kailash19961996/icons-and-images/main/www.gif"
+
+coll1,coll2,coll3 = st.columns(3)
+with coll2:
+    st.write(
+        f"""
+            <div style='display: flex; align-items: center;'>
+            <a href = 'https://kailashsubramaniyam.com/'><img src='{website}' style='width: 35px; height: 35px; margin-right: 25px;'></a>
+            <a href = 'https://www.youtube.com/@kailashbalasubramaniyam2449/videos'><img src='{Youtube}' style='width: 28px; height: 28px; margin-right: 25px;'></a>
+            <a href = 'https://www.linkedin.com/in/kailash-kumar-balasubramaniyam-62b075184'><img src='{linkedin}' style='width: 35px; height: 35px; margin-right: 25px;'></a>
+            <a href = 'https://github.com/kailash19961996'><img src='{github}' style='width: 28px; height: 32px; margin-right: 32px;'></a>
+            <a href = 'mailto:kailash.balasubramaniyam@gmail.com''><img src='{email}' style='width: 31px; height: 31px; margin-right: 25px;'></a>
+        </div>""", unsafe_allow_html=True,)
+
 # https://youtu.be/VKXTvplJFPA?si=c8xloMCZMBnBEf1G
 video_id = "VKXTvplJFPA?si=c8xloMCZMBnBEf1G"
 youtube_embed_url = f"https://www.youtube.com/embed/{video_id}?autoplay=1&mute=0"
@@ -61,24 +79,6 @@ st.markdown(f"""
     </div>
 """, unsafe_allow_html=True)
 
-linkedin = "https://raw.githubusercontent.com/kailash19961996/icons-and-images/main/linkedin.gif"
-github =   "https://raw.githubusercontent.com/kailash19961996/icons-and-images/main/gitcolor.gif"
-Youtube =  "https://raw.githubusercontent.com/kailash19961996/icons-and-images/main/371907120_YOUTUBE_ICON_TRANSPARENT_1080.gif"
-email =    "https://raw.githubusercontent.com/kailash19961996/icons-and-images/main/emails33.gif"
-website =  "https://raw.githubusercontent.com/kailash19961996/icons-and-images/main/www.gif"
-
-coll1,coll2,coll3 = st.columns(3)
-with coll2:
-    st.write(
-        f"""
-            <div style='display: flex; align-items: center;'>
-            <a href = 'https://kailashsubramaniyam.com/'><img src='{website}' style='width: 35px; height: 35px; margin-right: 25px;'></a>
-            <a href = 'https://www.youtube.com/@kailashbalasubramaniyam2449/videos'><img src='{Youtube}' style='width: 28px; height: 28px; margin-right: 25px;'></a>
-            <a href = 'https://www.linkedin.com/in/kailash-kumar-balasubramaniyam-62b075184'><img src='{linkedin}' style='width: 35px; height: 35px; margin-right: 25px;'></a>
-            <a href = 'https://github.com/kailash19961996'><img src='{github}' style='width: 28px; height: 32px; margin-right: 32px;'></a>
-            <a href = 'mailto:kailash.balasubramaniyam@gmail.com''><img src='{email}' style='width: 31px; height: 31px; margin-right: 25px;'></a>
-        </div>""", unsafe_allow_html=True,)
-     
 # Custom CSS to force white text color
 st.markdown("""
     <style>
