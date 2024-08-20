@@ -47,48 +47,48 @@ with coll2:
             <a href = 'mailto:kailash.balasubramaniyam@gmail.com''><img src='{email}' style='width: 31px; height: 31px; margin-right: 25px;'></a>
         </div>""", unsafe_allow_html=True,)
 
-"""
-st.markdown("""
-<div style='text-align: center;'>
-     <h4>60-Second Intro</h4>
-</div>
-""", unsafe_allow_html=True)
 
-video_id = "JLTRx_wt9Cw?si=PIXxzCwoeMLzuovM"
-youtube_embed_url = f"https://www.youtube.com/embed/{video_id}?autoplay=1&mute=0"
-st.markdown(f"""
-    <style>
-        .video-outer-container {{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            padding-top: 1px; 
-        }}
-        .video-container {{
-            position: relative;
-            width: 50%;
-            padding-bottom: 28.125%;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }}
-        .video-container iframe {{
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 15px;
-        }}
-    </style>
-    <div class="video-outer-container">
-        <div class="video-container">
-            <iframe src="{youtube_embed_url}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-    </div>
-""", unsafe_allow_html=True)
-"""
+# st.markdown("""
+# <div style='text-align: center;'>
+#      <h4>60-Second Intro</h4>
+# </div>
+# """, unsafe_allow_html=True)
+
+# video_id = "JLTRx_wt9Cw?si=PIXxzCwoeMLzuovM"
+# youtube_embed_url = f"https://www.youtube.com/embed/{video_id}?autoplay=1&mute=0"
+# st.markdown(f"""
+#     <style>
+#         .video-outer-container {{
+#             display: flex;
+#             justify-content: center;
+#             align-items: center;
+#             width: 100%;
+#             padding-top: 1px; 
+#         }}
+#         .video-container {{
+#             position: relative;
+#             width: 50%;
+#             padding-bottom: 28.125%;
+#             border-radius: 15px;
+#             overflow: hidden;
+#             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+#         }}
+#         .video-container iframe {{
+#             position: absolute;
+#             top: 0;
+#             left: 0;
+#             width: 100%;
+#             height: 100%;
+#             border-radius: 15px;
+#         }}
+#     </style>
+#     <div class="video-outer-container">
+#         <div class="video-container">
+#             <iframe src="{youtube_embed_url}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+#         </div>
+#     </div>
+# """, unsafe_allow_html=True)
+
 
 # Custom CSS to force white text color
 st.markdown("""
