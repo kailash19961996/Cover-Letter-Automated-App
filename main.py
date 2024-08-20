@@ -29,15 +29,38 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-@st.experimental_dialog("How to use this APP", width=1920)
-def show_video():
-    video_url = "https://www.youtube.com/watch?v=hliDj_jvUJA&t=50s&ab_channel=KailashSubramaniyam"
-    st.video(video_url, loop=False, autoplay=True, muted=False)
+# https://youtu.be/VKXTvplJFPA?si=c8xloMCZMBnBEf1G
+video_id = "VKXTvplJFPA?si=c8xloMCZMBnBEf1G"
+youtube_embed_url = f"https://www.youtube.com/embed/{video_id}?autoplay=1&mute=0"
+st.markdown(f"""
+    <style>
+        .video-outer-container {{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding-top: 20px; /* Add some top padding for spacing */
+        }}
+        .video-container {{
+            position: relative;
+            width: 50%; /* Adjust this value to change the video size */
+            padding-bottom: 28.125%; /* 16:9 Aspect Ratio (9 / 16 = 0.5625) * 50% */
+        }}
+        .video-container iframe {{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }}
+    </style>
+    <div class="video-outer-container">
+        <div class="video-container">
+            <iframe src="{youtube_embed_url}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+""", unsafe_allow_html=True)
 
-c1,c2,c3 = st.columns(3)
-with c2:
-    if st.button('How to use this APP'):
-        show_video()
 linkedin = "https://raw.githubusercontent.com/kailash19961996/icons-and-images/main/linkedin.gif"
 github =   "https://raw.githubusercontent.com/kailash19961996/icons-and-images/main/gitcolor.gif"
 Youtube =  "https://raw.githubusercontent.com/kailash19961996/icons-and-images/main/371907120_YOUTUBE_ICON_TRANSPARENT_1080.gif"
