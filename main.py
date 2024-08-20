@@ -47,8 +47,7 @@ with coll2:
             <a href = 'mailto:kailash.balasubramaniyam@gmail.com''><img src='{email}' style='width: 31px; height: 31px; margin-right: 25px;'></a>
         </div>""", unsafe_allow_html=True,)
 
-# https://youtu.be/VKXTvplJFPA?si=c8xloMCZMBnBEf1G
-video_id = "VKXTvplJFPA?si=c8xloMCZMBnBEf1G"
+video_id = "JLTRx_wt9Cw?si=PIXxzCwoeMLzuovM"
 youtube_embed_url = f"https://www.youtube.com/embed/{video_id}?autoplay=1&mute=0"
 st.markdown(f"""
     <style>
@@ -57,12 +56,15 @@ st.markdown(f"""
             justify-content: center;
             align-items: center;
             width: 100%;
-            padding-top: 20px; /* Add some top padding for spacing */
+            padding-top: 1px; 
         }}
         .video-container {{
             position: relative;
-            width: 50%; /* Adjust this value to change the video size */
-            padding-bottom: 28.125%; /* 16:9 Aspect Ratio (9 / 16 = 0.5625) * 50% */
+            width: 50%;
+            padding-bottom: 28.125%;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }}
         .video-container iframe {{
             position: absolute;
@@ -70,6 +72,7 @@ st.markdown(f"""
             left: 0;
             width: 100%;
             height: 100%;
+            border-radius: 15px;
         }}
     </style>
     <div class="video-outer-container">
