@@ -1,5 +1,5 @@
 """
-🚀 CoverLetterPro AI 🚀 
+🚀 AI Job Tailor 🚀 
 
 My new AI-powered app. An app designed to make creating cover letters a breeze! 🌟
 
@@ -25,7 +25,7 @@ add_bg_from_local('images/bg5.jpg')
 
 st.markdown("""
 <div style='text-align: center;'>
-     <h1> CoverLetterPro AI </h1>
+     <h1> AI Job Tailor </h1>
 </div>
 """, unsafe_allow_html=True)
 
