@@ -48,14 +48,10 @@ with coll2:
         </div>""", unsafe_allow_html=True,)
 
 st.markdown("""
-<style>
-    .red-text {
-        color: red;
-        text-align: center;
-    }
-</style>
+<div style='text-align: center;'>
+     <h4>60-Second Intro</h4>
+</div>
 """, unsafe_allow_html=True)
-st.markdown('<h4 class="red-text">60-Second Intro</h4>', unsafe_allow_html=True)
 
 video_id = "JLTRx_wt9Cw?si=PIXxzCwoeMLzuovM"
 youtube_embed_url = f"https://www.youtube.com/embed/{video_id}?autoplay=1&mute=0"
