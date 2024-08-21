@@ -1,8 +1,6 @@
 """
 🚀 AI Job Tailor 🚀 
 
-My new AI-powered app. An app designed to make creating cover letters a breeze! 🌟
-
 With just a few simple steps, you can generate a personalized cover letter tailored to your job application:
 
 1️⃣ Upload your resume (PDF or DOCX)
