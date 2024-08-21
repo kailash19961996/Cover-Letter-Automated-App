@@ -1,50 +1,17 @@
-# Automated Cover Letter Generator App
+# AI Job Tailor
 
-Welcome to the Automated Cover Letter Generator! This application leverages AI to create personalized cover letters, streamlining your job application process. The app is deployed on Streamlit for ease of use.
+Introducing AI Job Tailor – your personalized career companion designed to streamline your job search process. What sets AI Job Tailor apart is its ability to provide tailored job suggestions based on your unique profile and preferences, and to create a personalized cover letter that sets you apart from the competition.
 
-## Features
+Using advanced AI algorithms, AI Job Tailor analyzes your resume alongside job descriptions, whether you provide a link or paste them directly. The app assesses the relevance between your experience and the job requirements, giving you confidence in your application.
 
-- **Personalized Cover Letters**: Generate cover letters tailored to specific job descriptions.
-- **AI-Powered**: Utilizes natural language processing to enhance the quality of the cover letters.
-- **User-Friendly Interface**: Easy to use with minimal input required.
-- **Copy-Paste Job Posting**: Users can copy and paste the job posting directly into the app.
-- **Fetch Info from Links**: Users can input links to job postings (non-gated content) for automatic information extraction.
-- **Suggestions**: Get suggestions on improving your cover letter content.
-- **Downloadable Cover Letters**: Generated cover letters can be downloaded in various formats.
+If the match is strong, AI Job Tailor offers the option to create a customized cover letter, perfectly tailored to the job. You can even edit the letter to add your personal touch before sending it off.
 
-## Try It Out
+AI Job Tailor isn’t just about finding a job—it’s about finding the right job and presenting yourself in the best possible light. Simplify your job search and stand out with AI Job Tailor.
 
-You can try out the Automated Cover Letter Generator directly on Streamlit Cloud. No installation or code download is required. Simply follow the link below to start generating your cover letters:
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://cover-letter-app.streamlit.app/)
 [Click here to try the app](https://cover-letter-app.streamlit.app/)
 
-## Usage
+Click below to see the 60-second video tutorial
 
-### Home Page
+[![Watch the video](https://img.youtube.com/vi/5G2mpR0QvN0/0.jpg)](https://youtu.be/5G2mpR0QvN0)
 
-- **Step 1: Upload Your Resume**:
-  - Upload a pdf or docx file.
-  
-- **Step 2: Enter Job Details**:
-  - Copy and paste the job posting directly into the text box.
-  - Or provide a link to the job posting (non-gated content) to fetch information automatically.
-
-### Suggestions
-
-- The app will provide suggestions to improve your cover letter based on the job posting and your input.
-
-### Generate Cover Letter
-
-- Fill in your personal information and the relevant details as prompted by the app.
-- Generate a personalized cover letter tailored to the job posting.
-
-### Download Cover Letter
-
-- Once generated, you can download your cover letter in multiple formats (e.g., PDF, DOCX).
-
-## Project Structure
-
-- `main.py`: The main script to run the application.
-- `background.py`: Contains the logic and functions.
-- `requirements.txt`: List of required Python packages.
